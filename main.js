@@ -15,7 +15,7 @@ initAPI();
 async function initWeather() {
 
     try {
-        const response = await fetch(`http://api.airvisual.com/v2/nearest_city?key=3f5c2992-398f-46c4-b44c-fb61102a271b`)
+        const response = await fetch(`https://api.airvisual.com/v2/nearest_city?key=3f5c2992-398f-46c4-b44c-fb61102a271b`)
         const data = await response.json();
 
         if(!data.status === "success") {
