@@ -18,7 +18,7 @@ async function initWeather() {
         const response = await fetch(`https://api.airvisual.com/v2/nearest_city?key=3f5c2992-398f-46c4-b44c-fb61102a271b`)
         const data = await response.json();
 
-        if(!data.status === "success") {
+        if(data.status != "success") {
             throw new Error(`${response.status}`);
         }
 
@@ -30,7 +30,7 @@ async function initWeather() {
     }
     catch (error) {
         console.log("Error Catched")
-        errorMsg.textContent = `${error}`;
+        errorMsg.textContent = `${error} --- Il faut peut être autoriser la localisation de votre appareil`;
         loader.style.display = "none";
     }
 }
